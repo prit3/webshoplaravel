@@ -1,0 +1,17 @@
+body {
+    margin:0;
+    background-image:
+    linear-gradient(sandybrown,chocolate);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header {
+    position: sticky;
+    top:0;
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+.container {border: 1px solid red;}

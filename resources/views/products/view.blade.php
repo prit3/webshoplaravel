@@ -15,7 +15,7 @@ session_start();
     <body>
         <header class="wave">
             <nav class="navbar navbar-expand-lg navbar-dark">
-              <a class="navbar-brand" href="#">DriftSale</a>
+              <a class="navbar-brand" href="{{ route('home') }}">DriftSale</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -23,12 +23,12 @@ session_start();
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('view') }}">Home<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./products/productform.php">add product</a>
+                    <a class="nav-link" href="{{ route('productform') }}">add products</a>
                   </li>  <li class="nav-item">
-                    <a class="nav-link" href="./users/profile.php">profile</a>
+                    <a class="nav-link" href="{{ route('profile')}}">profile</a>
                   </li>
 
                 </ul>
