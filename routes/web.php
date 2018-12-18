@@ -13,24 +13,20 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('welcome');
 
 Route::get('/view', function () {
     return view('products.view');
 })->name('view');
 
 Route::get('/productform', function () {
-    return view('products.productform');
+    return view('products.add');
 })->name('productform');
 
 Route::get('/profile', function () {
     return view('users.profile');
 })->name('profile');
 
-Route::get('/Login', function () {
-    return view('users.login');
-})->name('login');
+Auth::routes();
 
-Route::get('/logout', function () {
-    return view('users.logout');
-})->name('logout');
+Route::get('/home', 'HomeController@index')->name('home');
