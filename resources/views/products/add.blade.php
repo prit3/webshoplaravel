@@ -1,6 +1,8 @@
 @extends('layouts.productform')
 
 @section('content')
+
+<title>DriftSale add</title>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

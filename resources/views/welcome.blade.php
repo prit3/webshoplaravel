@@ -76,11 +76,23 @@
                     <a href="{{ route('view') }}">view products</a>
                     <a href="{{ route('productform') }}">add products</a>
                     <a href="{{ route('profile') }}">profile</a>
-                    @if (Route::has('login'))
-                        <a href="{{ route('login') }}">Login</a>
+                    @guest
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+
+                        @endif
                     @else
-                      <a href="{{ route('logout') }}">Login</a>
-                    @endif
+                            </a>
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                    @endguest
 
                 </div>
             </div>
