@@ -20,10 +20,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('view') }}">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('products.index') }}">Home<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('productform') }}">add products</a>
+                    <a class="nav-link" href="{{ route('products.create') }}">add products</a>
                   </li>  <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile')}}">profile</a>
                   </li>
@@ -85,15 +85,20 @@
         </header>
         <div class="container">
                         <!-- get all product from database -->
+                <div class="row">
+
+                    <div class="col-sm-4" style=" padding-bottom:20px;">
                         <div class="card text-center" style="width: 18rem;">
-                      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-                      <div class="card-body">
-                          <h5 class="card-title"><a href="product-title" class="card-link">product name</a></h5>
+                          <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                          <div class="card-body">
+                              <h5 class="card-title"><a href="{{$product->id}}" class="card-link">{{$product->name}}</a></h5>
 
-                        <p class="card-text"><small class="text-muted">price<br> time </small></p>
-                      </div>
+                            <p class="card-text"><small class="text-muted">&euro;{{$product->price}}<br> {{$product->created_at}} </small></p>
+                          </div>
+                        </div>
                     </div>
-
+                    
+                </div>
             </div>
         </div>
          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

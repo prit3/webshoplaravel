@@ -15,17 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/view', function () {
-    return view('products.view');
-})->name('view');
-
-Route::get('/productform', function () {
-    return view('products.add');
-})->name('productform');
-
 Route::get('/profile', function () {
     return view('users.profile');
 })->name('profile');
+
+
+Route::resource('products', 'ProductController');
 
 Auth::routes();
 

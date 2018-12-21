@@ -73,8 +73,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('view') }}">view products</a>
-                    <a href="{{ route('productform') }}">add products</a>
+                    <a href="{{ route('products.index') }}">view products</a>
+                    <a href="{{ route('products.create') }}">add products</a>
                     <a href="{{ route('profile') }}">profile</a>
                     @guest
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

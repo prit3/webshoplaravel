@@ -22,10 +22,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('view') }}">Home</a>
+                    <a class="nav-link" href="{{ route('products.index') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('productform') }}">add product<span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="{{ route('products.create') }}">add product<span class="sr-only">(current)</span></a>
                   </li>  <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile')}}">profile</a>
                   </li>

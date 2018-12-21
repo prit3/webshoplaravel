@@ -20,10 +20,10 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('view') }}">Home</a>
+                                <a class="nav-link" href="{{ route('products.index') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('productform') }}">add product</a>
+                                <a class="nav-link" href="{{ route('products.create') }}">add product</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('profile') }}">profile<span class="sr-only">(current)</span></a>
