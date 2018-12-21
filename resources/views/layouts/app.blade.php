@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{{ route('products.index') }}">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('products.create') }}">add product<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('products.create') }}">add product</a>
                       </li>  <li class="nav-item">
                         <a class="nav-link" href="{{ route('profile')}}">profile</a>
                       </li>
