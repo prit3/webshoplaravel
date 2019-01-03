@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\product;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
@@ -55,9 +55,8 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function show(Product $product)
     {
-        $products = product::find($product);
         return view ('products.show',['product' => $product]);
     }
 
@@ -67,9 +66,8 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(product $product)
+    public function edit(Product $product)
     {
-        $products = product::find($product);
         return view ('products.edit',['product' => $product]);
     }
 
@@ -80,23 +78,24 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, product $product)
+    public function update(Request $request, Product $product)
     {
-        $product = product::find($product);
         $product->name      = Input::get('ProductName');
         $product->info      = Input::get('info');
         $product->price     = Input::get('price');
-        $product->update();
-        return redirect()->route ('products.index');
+        $product->save();
+
+        return redirect()->route('products.show',$product->id);
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\product  $product
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(Product $product)
     {
         //
     }

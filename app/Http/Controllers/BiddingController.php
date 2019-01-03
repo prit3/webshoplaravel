@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\bidding;
+use App\Bidding;
 use Illuminate\Http\Request;
 
 class BiddingController extends Controller
@@ -41,10 +41,10 @@ class BiddingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\bidding  $bidding
+     * @param  \App\Bidding  $bidding
      * @return \Illuminate\Http\Response
      */
-    public function show(bidding $bidding)
+    public function show(Bidding $bidding)
     {
         //
     }
@@ -52,10 +52,10 @@ class BiddingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\bidding  $bidding
+     * @param  \App\Bidding  $bidding
      * @return \Illuminate\Http\Response
      */
-    public function edit(bidding $bidding)
+    public function edit(Bidding $bidding)
     {
         //
     }
@@ -64,10 +64,10 @@ class BiddingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\bidding  $bidding
+     * @param  \App\Bidding  $bidding
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, bidding $bidding)
+    public function update(Request $request, Bidding $bidding)
     {
         //
     }
@@ -75,10 +75,10 @@ class BiddingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\bidding  $bidding
+     * @param  \App\Bidding  $bidding
      * @return \Illuminate\Http\Response
      */
-    public function destroy(bidding $bidding)
+    public function destroy(Bidding $bidding)
     {
         //
     }

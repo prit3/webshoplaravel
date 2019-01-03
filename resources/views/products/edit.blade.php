@@ -10,7 +10,7 @@
                 <div class="card-header">update Product</div>
                 <div class="card-body">
                     <form action="{{ route('products.update',$product->id) }}" method="POST">
-
+                        @method('PUT')
                         @csrf
 
                         <div class="form-group row">

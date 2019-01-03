@@ -13,7 +13,7 @@ class CreateBiddingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('biddings', function (Blueprint $table) {
+        Schema::create('bidings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product')->unsigned();
             $table->integer('bidder')->unsigned();
