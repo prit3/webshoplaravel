@@ -46,7 +46,7 @@ class ProductController extends Controller
         $product->info      = Input::get('info');
         $product->price     = Input::get('price');
         $product->save();
-        return redirect()->route ('products');
+        return redirect()->route ('products.index');
     }
 
     /**
@@ -57,7 +57,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        return view ('products.show');
+        $products = product::find($product);
+        return view ('products.show',['product' => $product]);
     }
 
     /**
@@ -68,7 +69,8 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        // return view ('products.edit');
+        $products = product::find($product);
+        return view ('products.edit',['product' => $product]);
     }
 
     /**
@@ -80,12 +82,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        $product = new \App\product;
+        $product = product::find($product);
         $product->name      = Input::get('ProductName');
         $product->info      = Input::get('info');
         $product->price     = Input::get('price');
         $product->update();
-        return redirect()->route ('products');
+        return redirect()->route ('products.index');
     }
 
     /**
