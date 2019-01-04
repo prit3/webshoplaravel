@@ -16,7 +16,19 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = product::all();
+        $products = Product::all();
+        $order = 'DESC';
+
+        if (Input::has('order')) {
+            $order = Input::get('order');
+        }
+
+        if (Input::has('sorteer')) {
+            $sorteer = Input::get('sorteer');
+            $products = Product::orderBy($sorteer, $order)->get();
+        }
+
+
         return view('products.view',['products' => $products]);
     }
 
@@ -40,13 +52,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //store new product
-        $product = new \App\product;
+        $product = new \App\Product;
         $product->name      = Input::get('ProductName');
         $product->seller    = Auth::user()->id;
         $product->info      = Input::get('info');
         $product->price     = Input::get('price');
         $product->save();
-        return redirect()->route ('products.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -68,7 +80,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view ('products.edit',['product' => $product]);
+        return view ('products.view',['product' => $product]);
     }
 
     /**
@@ -97,6 +109,12 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route ('products.index');
+    }
+
+    public function search($searchTerm) {
+        $products = product::where('name', 'like', '%' . $searchTerm . '%')->get();
+        return view('products.view', ['products' => $products]);
     }
 }

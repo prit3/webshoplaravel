@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Input;
+use App\Product;
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -25,3 +28,13 @@ Route::resource('products', 'ProductController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/products/{searchTerm}/search', 'ProductController@search')->name('search');
+
+// Route::any('/search',function(){
+//     $search = Input::get ( 'search' );
+//     $products = product::orderBy('created_at', 'desc')->where('name','LIKE','%'.$search.'%')->get();
+//     if(count($products) > 0)
+//         return view('products.search')->withDetails($products)->withQuery ( $search );
+//     else return view ('products.search')->withMessage('No Details found. Try to search again !');
+// });

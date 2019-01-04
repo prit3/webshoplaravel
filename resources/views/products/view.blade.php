@@ -31,8 +31,13 @@
                     <!-- lognin/log out  -->
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <form method="get" class="form-inline my-2 my-lg-0">
-                            <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search">
+                        <form action="" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search"
+                                    placeholder="Search">
+                                </span>
+                            </div>
                         </form>
                         <!-- Authentication Links -->
 
@@ -70,15 +75,18 @@
             <form method="get">
                 <select class="custom-select custom-select-sm" name="sorteer">
                     <option>Sort on</option>
-                    <option value="producktDESC">Products from new to oud</option>
-                    <option value="productASC">Products from old to new</option>
-                    <option value="timeDESC">Time from New to old</option>
-                    <option value="timeASC">Time from old to new</option>
-                    <option value="nameASC">Name from A to Z</option>
-                    <option value="nameDESC">Name from Z to A</option>
+                    <option value="created_at">Time</option>
+                    <option value="name">Name</option>
+                </select> <br>
+
+                <select class="custom-select custom-select-sm" name="order">
+                    <option value="DESC">DESC</option>
+                    <option value="ASC">ASC</option>
                 </select>
                 <input type="submit" name="update" value="Update">
             </form>
+
+
 
 
 
