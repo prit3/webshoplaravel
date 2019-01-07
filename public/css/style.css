@@ -6,9 +6,9 @@ header {
 }
 body {
     margin:0;
-    background-image:
-    linear-gradient( aquamarine,aquamarine,deepskyblue, deepskyblue);
-    height: 100vh;
+    background: linear-gradient( aquamarine,aquamarine,deepskyblue, deepskyblue)
+    no-repeat center center fixed; 
+
 }
 
 .wave{

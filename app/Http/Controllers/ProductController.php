@@ -80,7 +80,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view ('products.view',['product' => $product]);
+        return view ('products.edit',['product' => $product]);
     }
 
     /**
@@ -113,7 +113,8 @@ class ProductController extends Controller
         return redirect()->route ('products.index');
     }
 
-    public function search($searchTerm) {
+    public function search() {
+        $searchTerm = Input::get('search');
         $products = product::where('name', 'like', '%' . $searchTerm . '%')->get();
         return view('products.view', ['products' => $products]);
     }

@@ -23,13 +23,17 @@ Route::get('/profile', function () {
 })->name('profile');
 
 
+Route::get('/products/search', 'ProductController@search')->name('search');
+
 Route::resource('products', 'ProductController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/products/{searchTerm}/search', 'ProductController@search')->name('search');
+
+
+
 
 // Route::any('/search',function(){
 //     $search = Input::get ( 'search' );

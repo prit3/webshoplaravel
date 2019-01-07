@@ -31,7 +31,7 @@
                     <!-- lognin/log out  -->
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <form action="" method="POST" role="search">
+                        <form action="{{ route('search') }}" method="GET" role="search">
                             {{ csrf_field() }}
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search"
